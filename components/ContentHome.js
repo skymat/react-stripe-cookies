@@ -2,9 +2,8 @@ import React from 'react';
 import ContentBoxText from './ContentBoxText';
 import ContentBoxTestimonial from './ContentBoxTestimonial';
 import ContentBoxInformation from './ContentBoxInformation';
-import Footer from './Footer';
 
-class Content extends React.Component {
+class ContentHome extends React.Component {
   render() {
     return (
       <div id="page-content">
@@ -14,12 +13,9 @@ class Content extends React.Component {
         <ContentBoxTestimonial></ContentBoxTestimonial>
         { /* ////////////Content Box 04 */ }
         <ContentBoxInformation></ContentBoxInformation>
-        { /* FOOTER */ }
-        <Footer></Footer>
-        { /* jQuery */ }
       </div>
       );
   }
 }
 
-export default Content;
+export default ContentHome;

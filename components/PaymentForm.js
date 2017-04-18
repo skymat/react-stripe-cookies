@@ -149,3 +149,55 @@ class PaymentForm extends React.Component {
 }
 
 export default PaymentForm;
+
+/*
+<form name="form1" method="post" action="contact.php">
+   <div class="row">
+      <div class="col-md-4">
+         <div class="form-group">
+            <input type="text" class="form-control input-lg" name="name" id="name" placeholder="Numéro de carte" required="required" />
+         </div>
+      </div>
+      <div class="col-md-3">
+         <div class="form-group">
+            <select required="required">
+               <option>mois</option>
+               <option>1</option>
+               <option>2</option>
+               <option>3</option>
+               <option>4</option>
+               <option>5</option>
+               <option>6</option>
+               <option>7</option>
+               <option>8</option>
+               <option>9</option>
+               <option>10</option>
+               <option>11</option>
+               <option>12</option>
+            </select>
+         </div>
+      </div>
+      <div class="col-md-3">
+         <div class="form-group">
+            <select required="required">
+               <option>année</option>
+               <option>2017</option>
+               <option>2018</option>
+               <option>2019</option>
+               <option>2020</option>
+            </select>
+         </div>
+      </div>
+      <div class="col-md-2">
+         <div class="form-group">
+            <input type="text" class="form-control input-lg" name="cvc" id="cvc" placeholder="cryptogramme" required="required" />
+         </div>
+      </div>
+   </div>
+   <div class="row">
+      <div class="col-md-12">
+         <button type="submit" class="btn btn-skin btn-block" name="submit" id="submit">Valider</button>
+      </div>
+   </div>
+</form>
+*/

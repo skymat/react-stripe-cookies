@@ -12,7 +12,12 @@ class PageIndex extends React.Component {
 
   render() {
     return (
-      <Navigation/>
+      <div>
+        <Navigation/>
+        <Header img={"images/banner3.jpg"} />
+        <ContentHome />
+        <Footer />
+      </div>
     );
   }
 }

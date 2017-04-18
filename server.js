@@ -34,6 +34,8 @@ app.get("/", (req, res) =>
   res.render("index")
   );
 
+  
+
 
 
 app.post("/charge", (req, res) => {

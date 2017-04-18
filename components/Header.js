@@ -6,7 +6,7 @@ class Header extends React.Component {
       <header className="container">
         <p className="text-center">Monday - Friday <strong>11AM to 2PM</strong>, Saturday - Sunday <strong>9Am to 2PM</strong></p>
         <div className="row">
-          <img src="images/banner3.jpg" alt="..." />
+          <img src={this.props.img} alt="..." />
           { /* Static Header */ }
           <div className="header-text hidden-xs header-text">
             <h1>Great taste</h1><br />

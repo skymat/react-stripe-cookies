@@ -1,39 +1,42 @@
 import React from 'react';
 
 class Navigation extends React.Component {
+
+  constructor() {
+    super();
+  }
+
   render() {
     return (
-      <nav className="navbar navbar-default navbar-fixed-top">
+          <nav className="navbar navbar-default navbar-fixed-top">
         <div className="container">
-          { /* Brand and toggle get grouped for better mobile display */ }
-          <div className="navbar-header page-scroll">
-            <button type="button" className="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-              <span className="sr-only">Toggle navigation</span>
-              <span className="icon-bar" />
-              <span className="icon-bar" />
-              <span className="icon-bar" />
-            </button>
-            <a className="navbar-brand page-scroll" href="#page-top">SweetCake</a>
-          </div>
-          { /* Collect the nav links, forms, and other content for toggling */ }
-          <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul className="nav navbar-nav navbar-right">
-              <li className="hidden">
-                <a href="#page-top" />
-              </li>
-              <li>
-                <a className="page-scroll" href="index.html">Home</a>
-              </li>
-              <li>
-                <a className="page-scroll" href="menu.html">Menu</a>
-              </li>
-            </ul>
-          </div>
-          { /* /.navbar-collapse */ }
+               <div className="navbar-header page-scroll">
+                <button type="button" className="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span className="sr-only">Toggle navigation</span>
+                    <span className="icon-bar"></span>
+                    <span className="icon-bar"></span>
+                    <span className="icon-bar"></span>
+                </button>
+                <Link className="navbar-brand page-scroll" to="index.html#page-top">SweetCake</Link>
+            </div>
+
+            <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul className="nav navbar-nav navbar-right">
+                    <li className="hidden">
+                        <Link to="index.html#page-top"></Link>
+                    </li>
+                    <li>
+                        <Link className="page-scroll" to="index.html">Home</Link>
+                    </li>
+                    <li>
+                        <Link className="page-scroll" to="menu.html">Menu</Link>
+                    </li>
+                </ul>
+            </div>
         </div>
-        { /* /.container-fluid */ }
-      </nav>
-      );
+    </nav>
+
+    );
   }
 }
 

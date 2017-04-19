@@ -11524,7 +11524,7 @@ var PagePanier = function (_React$Component) {
             { id: 'main-content' },
             _react2.default.createElement(
               'div',
-              { 'class': 'container panier' },
+              { className: 'container panier' },
               _react2.default.createElement(
                 'h3',
                 null,
@@ -11537,22 +11537,22 @@ var PagePanier = function (_React$Component) {
               ),
               _react2.default.createElement(
                 'div',
-                { 'class': 'col-md-offset-2 col-md-8' },
+                { className: 'col-md-offset-2 col-md-8' },
                 _react2.default.createElement(
                   'div',
-                  { 'class': 'row' },
+                  { className: 'row' },
                   _react2.default.createElement(
                     'div',
-                    { 'class': 'col-lg-3 col-xs-12' },
+                    { className: 'col-lg-3 col-xs-12' },
                     _react2.default.createElement(
                       'div',
-                      { 'class': 'item-container' },
+                      { className: 'item-container' },
                       _react2.default.createElement('img', { src: 'images/menu-9.jpg' })
                     )
                   ),
                   _react2.default.createElement(
                     'div',
-                    { 'class': 'col-lg-3 col-xs-12' },
+                    { className: 'col-lg-3 col-xs-12' },
                     _react2.default.createElement(
                       'h3',
                       null,
@@ -11592,10 +11592,6 @@ module.exports = __webpack_require__(146);
 "use strict";
 
 
-var _react = __webpack_require__(4);
-
-var _react2 = _interopRequireDefault(_react);
-
 var _PageIndex = __webpack_require__(98);
 
 var _PageIndex2 = _interopRequireDefault(_PageIndex);
@@ -11614,26 +11610,20 @@ var _reactRouterDom = __webpack_require__(30);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-(0, _reactDom.render)(_react2.default.createElement(
+//import React from 'react'
+var React = __webpack_require__(4);
+
+(0, _reactDom.render)(React.createElement(
   _reactRouterDom.BrowserRouter,
-  null,
-  _react2.default.createElement(
+  { history: _reactRouterDom.browserHistory },
+  React.createElement(
     'div',
     null,
-    _react2.default.createElement(_reactRouterDom.Route, { path: '/panier', component: _PagePanier2.default }),
-    _react2.default.createElement(_reactRouterDom.Route, { path: '/menu', component: _PageMenu2.default }),
-    _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/', component: _PageIndex2.default })
+    React.createElement(_reactRouterDom.Route, { path: '/panier', component: _PagePanier2.default }),
+    React.createElement(_reactRouterDom.Route, { path: '/menu', component: _PageMenu2.default }),
+    React.createElement(_reactRouterDom.Route, { exact: true, path: '/', component: _PageIndex2.default })
   )
-)
-/*
-<Router>
-<div> 
-    <Route path="menu" component={PageMenu}/>
-    <Route path="panier" component={PagePanier}/>
-    <Route exact path="/" component={PageIndex}/>
-</div>  
-</Router>*/
-, document.getElementById('pageindex'));
+), document.getElementById('pageindex'));
 
 /***/ }),
 /* 103 */

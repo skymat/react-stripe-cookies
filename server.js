@@ -1,22 +1,20 @@
-var url  = require("url");
-var querystring = require("querystring");
-var express = require("express");
-var app = express();
-//var ejs = require("ejs");
-app.set('view engine', 'html');
+var express = require('express')
+var app = express()
+var path = require('path')
+var compression = require('compression')
 var bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json()); // this is used for parsing the JSON object from POST
+app.use(compression())
 
-//Permet de spécifier que tout ce qu'on dépose dans ce répertoire public sera automatiquement accessible
-//On peut l'appeler comme on veut, pas que public
-app.use(express.static("public"));
-app.use(express.static("views"));
+// serve our static stuff like index.css
+app.use(express.static(path.join(__dirname, 'public')))
+app.use(express.static(path.join(__dirname, 'views')))
 
-app.listen(process.env.PORT || 80, function(){
-  console.log("Server listening on port 80");
-}); 
-
+// send all requests to index.html so browserHistory works
+app.get('*', function (req, res) {
+  res.sendFile(path.join(__dirname, 'views', 'index.html'))
+})
 
 //Stripe
 const keyPublishable = "pk_test_8xAO9MLDK5jF8zlMJwSBqKKr";
@@ -26,15 +24,9 @@ const stripe = require("stripe")(keySecret)
 
 /*
 app.get('/', function (req, res) {
-  res.render('home');
+  res.render('index');
 })
 */
-
-app.get("/", (req, res) =>
-  res.render("index")
-  );
-
-  
 
 
 
@@ -62,3 +54,10 @@ if (req.body && req.body.stripeToken){
 else
   console.log("Pas de req.body");
 });
+
+
+
+var PORT = process.env.PORT || 80
+app.listen(PORT, function() {
+  console.log('Express server running at localhost:' + PORT)
+})

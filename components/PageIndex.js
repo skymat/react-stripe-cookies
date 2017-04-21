@@ -23,3 +23,4 @@ class PageIndex extends React.Component {
 }
 
 export default PageIndex;
+module.exports = PageIndex;

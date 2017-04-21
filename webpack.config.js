@@ -1,6 +1,6 @@
 
 module.exports = {
-  entry: './app.js',
+  entry: './appFront.js',
   output: { path: __dirname, filename: './public/bundle.js' },
   module: {
     rules: [

@@ -1,3 +1,6 @@
+var https = require('https');
+var fs = require('fs');
+
 var express = require('express')
 var ejs = require("ejs");
 var app = express();
@@ -71,7 +74,10 @@ else
 
 
 
-var PORT = process.env.PORT || 80
-app.listen(PORT, function() {
-  console.log('Express server running at localhost:' + PORT)
-})
+var sslOptions = {
+  key: fs.readFileSync('./SSL/key.pem'),
+  cert: fs.readFileSync('./SSL/cert.pem'),
+  passphrase: 'testserveurhttps'
+};
+
+https.createServer(sslOptions, app).listen(443);
